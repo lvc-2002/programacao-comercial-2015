@@ -1,36 +1,48 @@
 package br.com.lazaro.trabalho.control;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends Activity {
-
+	
+	private EditText txtNomeLivro;
+	private EditText txtNomeAutor;
+	private EditText txtAnoPublicacao;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        txtNomeLivro = (EditText) findViewById(R.id.txt_nome_do_livro);
+        txtNomeAutor = (EditText) findViewById(R.id.txt_nome_do_autor);
+        txtAnoPublicacao = (EditText) findViewById(R.id.txt_ano_publicacao);
     }
-
-
+    
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    protected void onRestart() {
+    	super.onRestart();
+    	
+    	txtNomeLivro.setText("");
+    	txtNomeAutor.setText("");
+    	txtAnoPublicacao.setText("");
+    	txtNomeLivro.clearFocus();
+    }
+    
+    public void visualiza(View v) {
+    	String nomeLivro = txtNomeLivro.getText().toString();
+    	String nomeAutor = txtNomeAutor.getText().toString();
+    	int anoPublicacao = Integer.parseInt(txtAnoPublicacao.getText().toString());
+    	
+    	Intent i = new Intent(this, ResultActivity.class);
+    	i.putExtra("nomeLivro", nomeLivro);
+    	i.putExtra("nomeAutor", nomeAutor);
+    	i.putExtra("anoPublicacao", anoPublicacao);
+    	
+    	startActivity(i);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
