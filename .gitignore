@@ -27,7 +27,7 @@ proguard/
 *.log
 
 # Arquivos de configuração do projeto
-*/.settings
+#*/.settings
 */libs
 .classpath
 .project
