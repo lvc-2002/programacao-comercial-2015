@@ -28,8 +28,8 @@ proguard/
 
 # Arquivos de configuração do projeto
 #*/.settings
-*/libs
-.classpath
-.project
-project.properties
-/.metadata/
+#*/libs
+#.classpath
+#.project
+#project.properties
+#/.metadata/
