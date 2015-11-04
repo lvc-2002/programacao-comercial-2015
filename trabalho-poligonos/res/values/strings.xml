@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">trabalho-poligonos</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_poligono">Escolha um Polígono: </string>
+    <string name="title_activity_quadrado">Quadrado</string>
+    <string name="title_activity_retangulo">Retângulo</string>
+    <string name="title_activity_triangulo">Triângulo</string>
+    <string name="title_activity_trapezio">Trapézio</string>
+    
+    <string name="lbl_lado">Lado: </string>
+    <string name="lbl_base">Base: </string>
+    <string name="lbl_base_menor">Base Menor: </string>
+    <string name="lbl_base_maior">Base Maior: </string>
+    <string name="lbl_altura">Altura: </string>
+    <string name="btn_calcular">Calcular</string>
+    
+</resources>
