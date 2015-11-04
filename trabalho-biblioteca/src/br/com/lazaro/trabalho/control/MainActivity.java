@@ -1,6 +1,7 @@
 package br.com.lazaro.trabalho.control;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,12 +38,23 @@ public class MainActivity extends Activity {
     	String nomeAutor = txtNomeAutor.getText().toString();
     	int anoPublicacao = Integer.parseInt(txtAnoPublicacao.getText().toString());
     	
-    	Intent i = new Intent(this, ResultActivity.class);
-    	i.putExtra("nomeLivro", nomeLivro);
-    	i.putExtra("nomeAutor", nomeAutor);
-    	i.putExtra("anoPublicacao", anoPublicacao);
+    	String ano = anoPublicacao+"";
+    	if(nomeLivro != null && !nomeLivro.isEmpty() && nomeAutor != null && !nomeAutor.isEmpty() && ano != null && !ano.isEmpty()) {
+    		Intent i = new Intent(this, ResultActivity.class);
+        	i.putExtra("nomeLivro", nomeLivro);
+        	i.putExtra("nomeAutor", nomeAutor);
+        	i.putExtra("anoPublicacao", anoPublicacao);
+        	
+        	startActivity(i);
+    	} else {
+    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    		builder.setTitle("Atenção");
+    		builder.setMessage("Informe os dados do livro!");
+    		
+    		AlertDialog ad = builder.create();
+    		ad.show();
+    	}
     	
-    	startActivity(i);
     }
 
 }
