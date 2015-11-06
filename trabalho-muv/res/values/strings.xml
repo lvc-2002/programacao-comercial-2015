@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">trabalho-muv</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="muv_velocidade_inicial">Velocidade Inicial (m/s): </string>
+    <string name="muv_deslocamento_total">Deslocamento total (m): </string>
+    <string name="muv_aceleracao">Aceleração: </string>
+    <string name="muv_btn_calcular">Calcular</string>
+    
+</resources>
